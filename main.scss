@@ -1,0 +1,145 @@
+$theme-colors: (
+  color1: #ff715b,
+  color2: rgba(74, 25, 66, 1),
+);
+
+body,
+html {
+  height: 100vh;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 8% 92% 100%;
+  grid-template-areas: "header header header header" "intro intro intro intro" "technologies technologies technologies technologies";
+}
+
+/* Navbar */
+header {
+  background-color: map-get($map: $theme-colors, $key: color2);
+  display: flex;
+  grid-area: header;
+
+  a {
+    color: white;
+    text-decoration: none;
+    border-top: 2px solid rgba(0, 0, 0, 0);
+  }
+
+  a:hover {
+    border-top: 2px solid map-get($map: $theme-colors, $key: color1);
+    color: map-get($map: $theme-colors, $key: color1);
+    transition: 0.2s ease-in;
+  }
+
+  .links {
+    border: 1px solid red;
+    align-items: center;
+    display: flex;
+    font-size: 20px;
+    flex: 1;
+    justify-content: space-evenly;
+  }
+
+  .header-title {
+    border: 1px solid red;
+    align-items: center;
+    color: white;
+    display: flex;
+    flex: 1;
+    font-weight: bold;
+    font-size: 20px;
+    justify-content: center;
+  }
+
+  .logout {
+    border: 1px solid orange;
+    align-items: center;
+    color: white;
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    padding-right: 20px;
+  }
+}
+
+intro {
+  background-color: black;
+  grid-area: intro;
+}
+
+technologies {
+  // background-color: blue;
+  display: grid;
+  grid-area: technologies;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 8% auto auto;
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  grid-template-areas: "tech-header tech-header tech-header tech-header tech-header" "card1 card2 card3 card4 card5" "card6 card7 card8 card9 card10";
+
+  tech-header {
+    background-color: red;
+    grid-area: tech-header;
+  }
+
+  .shadow {
+    border-radius: 0.25em;
+    -webkit-box-shadow: -1px -1px 22px 2px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px -1px 22px 2px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px -1px 22px 2px rgba(0, 0, 0, 0.75);
+  }
+
+  card:nth-of-type(1) {
+    background-color: white;
+    grid-area: card1;
+  }
+
+  card:nth-of-type(2) {
+    background-color: blue;
+    grid-area: card2;
+  }
+
+  card:nth-of-type(3) {
+    background-color: orange;
+    grid-area: card3;
+  }
+
+  card:nth-of-type(4) {
+    background-color: blue;
+    grid-area: card4;
+  }
+
+  card:nth-of-type(5) {
+    background-color: white;
+    grid-area: card5;
+  }
+
+  card:nth-of-type(6) {
+    background-color: white;
+    grid-area: card6;
+  }
+
+  card:nth-of-type(7) {
+    background-color: orange;
+    grid-area: card7;
+  }
+
+  card:nth-of-type(8) {
+    background-color: red;
+    grid-area: card8;
+  }
+
+  card:nth-of-type(9) {
+    background-color: yellow;
+    grid-area: card9;
+  }
+
+  card:nth-of-type(10) {
+    background-color: white;
+    grid-area: card10;
+  }
+}
